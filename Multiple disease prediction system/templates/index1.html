@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MDPS|Heart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+  <body style="background-color: #E7F2F8">
+
+    <div style="background-color:#74BDCB">
+      
+        <h3 style="font-size: 40px;color:black;font-family:'Georgia';text-align:center">HEART DISEASE PREDICTION</h3>
+        <a href="/" style="background-color: white;color:black">Home</a>
+        
+    </div>
+
+    <br>
+    <br>
+    
+    <div style="margin-left: 80px;">
+    <form action="/heart" method="POST" style="color: black;font-family:'Times New Roman', Times, serif">
+
+        <div class="mb-3">
+            <label for="age" class="form-label" style="margin-left:450px ;font-size: large;font-family:'Times New Roman', Times, serif">Age</label>
+            <input type="text" class="form-control" id="age" name="age" placeholder="Enter your age" style="width: 30%;margin-left:450px">
+        </div>
+        <br>
+
+        <label for="sex" class="form-label" style="margin-left:450px ;font-size: large;font-family:'Times New Roman', Times, serif">Sex</label>
+              <select class="form-select" aria-label="Default select example" name="sex" id="sex" style="width: 30%;margin-left:450px">
+                <option selected>Select your gender</option>
+                <option value="0">Female</option>
+                <option value="1">Male</option>
+              </select> 
+        <br>
+
+        <label for="cp" class="form-label" style="margin-left:450px ;font-size: large;font-family:'Times New Roman', Times, serif">Chest Pain</label>
+              <select class="form-select" aria-label="Default select example" name="cp" id="cp" style="width: 30%;margin-left:450px">
+                <option selected>Select your chestpain level</option>
+                <option value="0">No pain</option>
+                <option value="1">Low pain</option>
+                <option value="2">Moderate pain</option>
+                <option value="3">Severe pain</option>
+              </select> 
+        <br>
+
+        <div class="mb-3">
+            <label for="trestbps" class="form-label" style="margin-left:450px ;font-size: large;font-family:'Times New Roman', Times, serif">Blood Pressure</label>
+            <input type="text" class="form-control" id="trestbps" name="trestbps" placeholder="Enter your resting blood pressure" style="width: 30%;margin-left:450px">
+        </div>
+        <br>
+
+        <div class="mb-3">
+            <label for="chol" class="form-label" style="margin-left:450px ;font-size: large;font-family:'Times New Roman', Times, serif">Cholestrol</label>
+            <input type="text" class="form-control" id="chol" name="chol" placeholder="Enter your cholestrol level" style="width: 30%;margin-left:450px">
+        </div>
+        <br>
+
+        <label for="fbs" class="form-label" style="margin-left:450px ;font-size: large;font-family:'Times New Roman', Times, serif">Blood Sugar</label>
+              <select class="form-select" aria-label="Default select example" name="fbs" id="fbs" style="width: 30%;margin-left:450px">
+                <option selected>Enter your blood sugar level</option>
+                <option value="0">Low</option>
+                <option value="1">High</option>
+              </select> 
+        <br>
+
+        <label for="restecg" class="form-label" style="margin-left:450px ;font-size: large;font-family:'Times New Roman', Times, serif">ECG Result</label>
+              <select class="form-select" aria-label="Default select example" name="restecg" id="restecg" style="width: 30%;margin-left:450px">
+                <option selected>How is your ECG result</option>
+                <option value="0">Normal</option>
+                <option value="1">Slightly Abnormal</option>
+                <option value="2">Abnormal</option>
+              </select> 
+        <br>
+
+        <div class="mb-3">
+            <label for="thalach" class="form-label" style="margin-left:450px ;font-size: large;font-family:'Times New Roman', Times, serif">Heart Rate</label>
+            <input type="text" class="form-control" id="thalach" name="thalach" placeholder="Enter your maximum heart rate" style="width: 30%;margin-left:450px">
+        </div>
+        <br>
+
+        <label for="exang" class="form-label" style="margin-left:450px ;font-size: large;font-family:'Times New Roman', Times, serif">Chest pain during workout</label>
+              <select class="form-select" aria-label="Default select example" name="exang" id="exang" style="width: 30%;margin-left:450px">
+                <option selected>Do you suffer from chest pain while exercise</option>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+              </select> 
+        <br>
+
+        <div class="mb-3">
+            <label for="oldpeak" class="form-label" style="margin-left:450px ;font-size: large;font-family:'Times New Roman', Times, serif">Asymptotic Chest Pain</label>
+            <input type="text" class="form-control" id="oldpeak" name="oldpeak" placeholder="Enter your asymptotic chest pain level on scale of 0 to 6" style="width: 30%;margin-left:450px">
+        </div>
+        <br>
+
+        <label for="slope" class="form-label" style="margin-left:450px ;font-size: large;font-family:'Times New Roman', Times, serif">Slope Of Peak Exercise</label>
+              <select class="form-select" aria-label="Default select example" name="slope" id="slope" style="width: 30%;margin-left:450px">
+                <option selected>Select slope of your peek exercise</option>
+                <option value="0">Normal</option>
+                <option value="1">Slightly Abnormal</option>
+                <option value="2">Abnormal</option>
+              </select> 
+        <br>
+
+        <label for="ca" class="form-label" style="margin-left:450px ;font-size: large;font-family:'Times New Roman', Times, serif">Number Of Major Vessels</label>
+              <select class="form-select" aria-label="Default select example" name="ca" id="ca" style="width: 30%;margin-left:450px">
+                <option selected>Select number of major vessels colored by flurosopy </option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select> 
+        <br>
+
+        <label for="thal" class="form-label" style="margin-left:450px ;font-size: large;font-family:'Times New Roman', Times, serif">Thalassemia</label>
+              <select class="form-select" aria-label="Default select example" name="thal" id="thal" style="width: 30%;margin-left:450px">
+                <option selected>Select your thalassemia level</option>
+                <option value="0">Normal</option>
+                <option value="1">Fixed defect</option>
+                <option value="2">Reversable defect</option>
+                
+              </select> 
+        <br>
+
+        <div style="margin-left:630px">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>    
+    
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>
