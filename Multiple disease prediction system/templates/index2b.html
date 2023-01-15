@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MDPS|Kidney</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+
+<body style="background-image: url(static/kidback.jpg);background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; ">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="font-family: 'Times New Roman', Times, serif">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="color: white;">Kidney Disease Detection</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/" style="color: white;">Home</a>
+                    </li>
+
+
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <marquee style="font-size: 40px;color:black;font-family:'Times New Roman', Times, serif">Kidney Disease
+            Detection
+        </marquee>
+    </div>
+    <br>
+    <br>
+    <div style="display:flex;flex-direction:row;">
+
+        <div style="padding-left:50px">
+            <a href="https://github.com/Tanmayture18/BE-Project/blob/main/Kidney_csv.ipynb">
+                <img src="static/kidlogoo.jpg" alt="Example Image" height="400px" width="400px"
+                    style="border-radius: 50%;border:solid 2px black">
+            </a>
+        </div>
+
+        <div style="margin-left: 50px;">
+            <form action="/kidney" method="POST"
+                style="color: black;font-family:'Times New Roman', Times, serif;width: 200%">
+
+
+                <div class="mb-3">
+                    <label for="age" class="form-label"
+                        style="margin-left:450px ;font-size: large;font-family:'Times New Roman', Times, serif">Age</label>
+                    <input type="number" class="form-control" id="age" name="age" placeholder="Enter your age"
+                        style="width: 30%;margin-left:450px">
+                </div>
+                <br>
+
+                <div class="mb-3">
+                    <label for="bp" class="form-label"
+                        style="margin-left:450px ;font-size: large;font-family:'Times New Roman', Times, serif">Blood
+                        Pessure</label>
+                    <input type="number" class="form-control" id="bp" name="bp" placeholder="Enter your blood pressure"
+                        style="width: 30%;margin-left:450px">
+                </div>
+                <br>
+                <div class="mb-3">
+                    <label for="al" class="form-label"
+                        style="margin-left:450px ;font-size: large;font-family:'Times New Roman', Times, serif">Albumin</label>
+                    <input type="number" class="form-control" id="al" name="al"
+                        placeholder="Enter your albumin level on scale 0 to 5" style="width: 30%;margin-left:450px">
+                </div>
+                <br>
+
+                <div class="mb-3">
+                    <label for="su" class="form-label"
+                        style="margin-left:450px ;font-size: large;font-family:'Times New Roman', Times, serif">Sugar</label>
+                    <input type="number" class="form-control" id="su" name="su"
+                        placeholder="Enter your sugar level on scale 0 to 5" style="width: 30%;margin-left:450px">
+                </div>
+                <br>
+                <label for="rbc" class="form-label"
+                    style="margin-left:450px ;font-size: large;font-family:'Times New Roman', Times, serif">Red Blood
+                    Cells</label>
+                <select class="form-select" aria-label="Default select example" name="rbc" id="rbc"
+                    style="width: 30%;margin-left:450px">
+                    <option selected>Select your red blood cells count</option>
+                    <option value="0">Abnormal</option>
+                    <option value="1">Normal</option>
+                </select>
+                <br>
+
+                <div class="mb-3">
+                    <label for="bgr" class="form-label"
+                        style="margin-left:450px ;font-size: large;font-family:'Times New Roman', Times, serif">Blood
+                        Glucose</label>
+                    <input type="number" class="form-control" id="bgr" name="bgr"
+                        placeholder="Enter your blood glucose level" style="width: 30%;margin-left:450px">
+                </div>
+                <br>
+                <div class="mb-3">
+                    <label for="bu" class="form-label"
+                        style="margin-left:450px ;font-size: large;font-family:'Times New Roman', Times, serif">Blood
+                        Urea</label>
+                    <input type="number" class="form-control" id="bu" name="bu" placeholder="Enter your blood uera level"
+                        style="width: 30%;margin-left:450px">
+                </div>
+                <br>
+
+                <label for="ba" class="form-label"
+                    style="margin-left:450px ;font-size: large;font-family:'Times New Roman', Times, serif">Bacteria</label>
+                <select class="form-select" aria-label="Default select example" name="ba" id="ba"
+                    style="width: 30%;margin-left:450px">
+                    <option selected>Is bacteria present</option>
+                    <option value="0">Not present</option>
+                    <option value="1">Present</option>
+                </select>
+                <br>
+                <div class="mb-3">
+                    <label for="hemo" class="form-label"
+                        style="margin-left:450px ;font-size: large;font-family:'Times New Roman', Times, serif">Hemoglobin</label>
+                    <input type="number" class="form-control" id="hemo" name="hemo"
+                        placeholder="Enter your hemoglobin level" style="width: 30%;margin-left:450px">
+                </div>
+                <br>
+
+                <div class="mb-3">
+                    <label for="wc" class="form-label"
+                        style="margin-left:450px ;font-size: large;font-family:'Times New Roman', Times, serif">White
+                        Blood Cells
+                        Count</label>
+                    <input type="number" class="form-control" id="wc" name="wc"
+                        placeholder="Enter your white blood cells count" style="width: 30%;margin-left:450px">
+                </div>
+                <br>
+                <div class="mb-3">
+                    <label for="rc" class="form-label"
+                        style="margin-left:450px ;font-size: large;font-family:'Times New Roman', Times, serif">Red
+                        Blood Cells
+                        Count</label>
+                    <input type="number" class="form-control" id="rc" name="rc"
+                        placeholder="Enter your red blood cells count in millions" style="width: 30%;margin-left:450px">
+                </div>
+                <br>
+
+                <label for="htn" class="form-label"
+                    style="margin-left:450px ;font-size: large;font-family:'Times New Roman', Times, serif">Hypertension</label>
+                <select class="form-select" aria-label="Default select example" name="htn" id="htn"
+                    style="width: 30%;margin-left:450px">
+                    <option selected>Do you suffer from hypertension</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+                <br>
+                <label for="cad" class="form-label"
+                    style="margin-left:450px ;font-size: large;font-family:'Times New Roman', Times, serif">Coronary
+                    Artery
+                    Disease</label>
+                <select class="form-select" aria-label="Default select example" name="cad" id="cad"
+                    style="width: 30%;margin-left:450px">
+                    <option selected>Do you have coronary artery disease</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+                <br>
+
+                <div style="margin-left:630px">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+
+
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+</body>
+
+</html
