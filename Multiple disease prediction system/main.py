@@ -10,6 +10,10 @@ file2=open('model2.pk1','rb')
 clf2=pickle.load(file2)
 file2.close()
 
+file3=open('model3.pk1','rb')
+clf3=pickle.load(file3)
+file3.close()
+
 @app.route("/",methods=["GET","POST"])
 def hello_world():
     return render_template('index.html')
@@ -67,6 +71,28 @@ def hello_world2():
 
         return render_template('show2.html',inf2=pred2)
     return render_template('index2b.html')  
+
+
+@app.route("/diabetes",methods=["GET","POST"])
+def hello_world3():
+    if request.method=="POST":
+        mydict3=request.form
+        Glucose=int(mydict3['Glucose']) 
+        BloodPressure=int(mydict3['BloodPressure'])
+        SkinThickness=int(mydict3['SkinThickness'])
+        Insulin=int(mydict3['Insulin'])
+        BMI=int(mydict3['BMI'])
+        DiabetesPedigreeFunction=float(mydict3['DiabetesPedigreeFunction'])
+        Age=int(mydict3['Age'])
+        
+
+        inputfeatures3=[Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age]
+
+        pred3=clf3.predict([inputfeatures3])
+
+        return render_template('show3.html',inf3=pred3)
+
+    return render_template('index3.html')
 
 
 

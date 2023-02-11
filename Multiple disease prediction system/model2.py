@@ -59,6 +59,6 @@ if __name__=='__main__':
     clf2=RandomForestClassifier()
     clf2.fit(X_train,y_train)
 
-    file=open('model2.pk1','wb')
-    pickle.dump(clf2,file)   
-    file.close() 
+    file2=open('model2.pk1','wb')
+    pickle.dump(clf2,file2)   
+    file2.close() 
